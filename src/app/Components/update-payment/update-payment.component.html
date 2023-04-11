@@ -1,0 +1,39 @@
+<h3> Update Payment</h3>
+
+<form (ngSubmit) = "onSubmit()">
+  <div class = "from-group">
+    <label>candidateName: </label>
+    <input minlength="3" type = "text" class = "from-control" id = "candidateName" placeholder="Enter the CandidateName"
+    [(ngModel)] = "payment.candidateName" name="candidateName">
+  </div>
+
+  <div class = "from-group">
+    <label>bankName: </label>
+    <input minlength="3" type = "text" class = "from-control" id = "bankName" placeholder="Enter the Bank Name"
+    [(ngModel)] = "payment.bankName" name="bankName">
+  </div>
+
+  <div class = "from-group">
+    <label>accountNo: </label>
+    <input minlength="3" type = "text" class = "from-control" id = "accountNo" placeholder="Enter the account Number"
+    [(ngModel)] = "payment.accountNo" name="accountNo" pattern="[1-9]+" maxlength="15">
+  </div>
+
+  <div class = "from-group">
+    <label>ifscCode: </label>
+    <input minlength="3" type = "text" class = "from-control" id = "ifscCode" placeholder="Enter IFSC code"
+    [(ngModel)] = "payment.ifscCode" name=" ifscCode" pattern="^[A-Z]{4}[A-Z0-9]{6}$">
+  </div>
+
+  <div class = "from-group">
+    <label>amount: </label>
+    <input type = "text" class = "from-control" id = "amount" placeholder="Enter the Amount"
+    [(ngModel)] = "payment.amount" name="amount" pattern="[1-9]+" >
+  </div>
+  
+
+   <button class = "btn btn-success" type ="submit">Update Now</button>
+
+
+</form>
+

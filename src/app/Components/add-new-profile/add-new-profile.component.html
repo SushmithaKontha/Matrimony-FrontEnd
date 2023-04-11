@@ -1,0 +1,138 @@
+<div class="container mt-5" >
+    <div class="card p-2">
+        <div class="row">
+            <div class="col-6">
+                <form #profileForm="ngForm" (ngSubmit)="addProfile(profileForm)">
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Full Name</mat-label>
+                        <input type="text" matInput placeholder="Enter Full Name" [(ngModel)]="profile.fullName"
+                            name="fullName">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Age</mat-label>
+                        <input type="number" matInput placeholder="Enter Age" [(ngModel)]="profile.age" name="age">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Gender</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.gender"
+                            name="gender">
+
+
+
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Height</mat-label>
+                        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="profile.height"
+                            name="height">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Contact Number</mat-label>
+
+                        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="profile.contactNumber"
+                            name="contactNumber">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Caste</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.caste" name="caste">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Religion</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.religion"
+                            name="religion">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Star</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.star" name="star">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Mother Tongue</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.motherTongue"
+                            name="motherTongue">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Residence</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.residence"
+                            name="residence">
+
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Income</mat-label>
+                        <input type="number" matInput placeholder="Placeholder" [(ngModel)]="profile.income"
+                            name="income">
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Citizenship</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.citizenship"
+                            name="citizenship">
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>education</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.education"
+                            name="education">
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Bio</mat-label>
+                        <input type="text" matInput placeholder="Placeholder" [(ngModel)]="profile.description"
+                            name="description">
+
+                    </mat-form-field>
+                    <div align="end">
+                        <button mat-stroked-button color="primary" style="margin-right:4px ;">Clear</button>
+                        <button type="submit" mat-stroked-button color="primary" 
+                        *ngIf="isNewProfile">Add Profile</button>
+                        <button type="submit" mat-stroked-button color="primary"
+                        *ngIf="!isNewProfile">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <div class="dropzone"
+                    appDrag
+                    (files)="fileDropped($event)">
+                        <div class="text-wrapper">
+                            <div class="centered">
+                            Drag and drop your file or <a (click)="selectFile.click()" 
+                            class="browse-button">browse</a>  a file
+                        </div>
+                        </div>
+                    </div>
+                    <input type="file"
+                    style="display:none ;" multiple value="select" #selectFile (change)="onFileSelected($event)">
+                </div>
+                <div class="mt-5">
+                    <div class="row">
+                        <mat-grid-list cols="4" rowHeight="1:1 ">
+                            <mat-grid-tile *ngFor="let file of profile.profileImages;
+                            let i=index;">
+                                <div style="position: relative;">
+                                    <span class="btn-remove-image" (click)="removeImages(i)">x</span>
+                                    <img [src]="file.url" width="100px" height="100px">
+
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

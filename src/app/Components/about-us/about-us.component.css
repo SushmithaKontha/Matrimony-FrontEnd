@@ -1,0 +1,48 @@
+
+.bradcam_area {
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .bradcam_bg_1 {
+    background-image: url(../../../assets/feather.jpg);
+    }
+    
+    .bradcam_text {
+    margin-top: 90px;
+    margin-bottom: 100px;
+    color: #fff;
+    }
+    
+    .bradcam_text h1 {
+    font-size: 60px;
+    font-weight: 700;
+    }
+    
+    /* Sample Text Area */
+    .sample-text-area {
+    padding: 60px 0;
+    }
+    
+    .text-heading {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    }
+    
+    .sample-text {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    }
+    
+    .sample-text strong {
+    font-weight: 700;
+    }
+    
+    .sample-text p {
+    margin-bottom: 15px;
+    }

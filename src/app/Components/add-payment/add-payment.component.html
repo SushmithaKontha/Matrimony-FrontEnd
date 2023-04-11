@@ -1,0 +1,39 @@
+<h3> Add Payment</h3>
+
+
+<form (ngSubmit) = "onSubmit()">
+  <div class = "from-group">
+    <label>candidateName: </label>
+    <input  required minlength="3" type = "text" class = "from-control" id = "candidateName" placeholder="Enter Candidate Name"
+    [(ngModel)] = "payment.candidateName" name="candidateName" >
+  </div>
+
+  <div class = "from-group">
+    <label>bankName: </label>
+    <input required minlength="2" type = "text" class = "from-control" id = "bankName" placeholder="Enter Bank Name"
+    [(ngModel)] = "payment.bankName" name="bankName">
+  </div>
+
+  <div class = "from-group">
+    <label>accountNo: </label>
+    <input required minlength="6" type = "text" class = "from-control" id = "accountNo" placeholder="Enter Account number"
+    [(ngModel)] = "payment.accountNo" name="accountNo" pattern="[1-9]+" maxlength="15">
+  </div>
+
+  <div class = "from-group">
+    <label>ifscCode: </label>
+    <input required minlength="6" type = "text" class = "from-control" id = "ifscCode" placeholder=" Enter IFSC code"
+    [(ngModel)] = "payment.ifscCode" name=" ifscCode" pattern="^[A-Z]{4}[A-Z0-9]{6}$">
+  </div>
+
+  <div class = "from-group">
+    <label>amount: </label>
+    <input  required minlength="2" type = "text" class = "from-control" id = "amount" placeholder="Enter Amount"
+    [(ngModel)] = "payment.amount" name="amount" pattern="[1-9]+">
+  </div>
+  
+
+   <button class = "btn btn-success" type ="submit">Pay Now</button>
+
+
+</form>

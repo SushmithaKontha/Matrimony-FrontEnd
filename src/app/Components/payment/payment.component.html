@@ -1,0 +1,30 @@
+<div style="text-align:center">
+<table class = "table table-stripend">
+  <thead>
+    <tr>
+      <th> id </th>
+      <th> CandidateName </th>
+      <th> BankName </th>
+      <th> AccountNo </th>
+      <th> ifscCode </th>
+      <th> amount </th>
+      
+    <th> Actions </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let payment of payments">
+ 
+      <td> {{payment.id}}</td>
+      <td> {{payment.candidateName }}</td>
+      <td> {{payment.bankName}}</td>
+      <td> {{payment.accountNo}}</td>
+      <td> {{payment.ifscCode}}</td>
+      <td> {{payment.amount}}</td>
+
+      <td><button (click) = "updatePayment(payment?.id!)"  class = "btn btn-info">Update</button></td>
+      <td><button (click) = "viewPaymentDetails(payment?.id!)" class = "btn btn-info" >View</button></td>
+    </tr>
+  </tbody>
+
+</table></div>

@@ -1,0 +1,117 @@
+
+<table mat-table [dataSource]="profileDetails" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="FullName">
+      <th mat-header-cell *matHeaderCellDef> FullName </th>
+      <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Gender">
+      <th mat-header-cell *matHeaderCellDef> Gender</th>
+      <td mat-cell *matCellDef="let element"> {{element.gender}}</td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Height">
+      <th mat-header-cell *matHeaderCellDef> Height </th>
+      <td mat-cell *matCellDef="let element"> {{element.height}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="ContactNumber">
+      <th mat-header-cell *matHeaderCellDef> ContactNumber </th>
+      <td mat-cell *matCellDef="let element"> {{element.contactNumber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Caste">
+      <th mat-header-cell *matHeaderCellDef> Caste </th>
+      <td mat-cell *matCellDef="let element"> {{element.caste}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Religion">
+      <th mat-header-cell *matHeaderCellDef> Religion </th>
+      <td mat-cell *matCellDef="let element"> {{element.religion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Star">
+      <th mat-header-cell *matHeaderCellDef> Star </th>
+      <td mat-cell *matCellDef="let element"> {{element.star}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="MotherTongue">
+      <th mat-header-cell *matHeaderCellDef> MotherTongue  </th>
+      <td mat-cell *matCellDef="let element"> {{element.motherTongue}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Residence">
+      <th mat-header-cell *matHeaderCellDef> Residence </th>
+      <td mat-cell *matCellDef="let element"> {{element.residence}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Income">
+      <th mat-header-cell *matHeaderCellDef>Income </th>
+      <td mat-cell *matCellDef="let element"> {{element.income}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Citizenship">
+      <th mat-header-cell *matHeaderCellDef> Citizenship </th>
+      <td mat-cell *matCellDef="let element"> {{element.citizenship}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Education">
+      <th mat-header-cell *matHeaderCellDef> Education </th>
+      <td mat-cell *matCellDef="let element"> {{element.education}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Images">
+      <th mat-header-cell *matHeaderCellDef> Images</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="showImages(element)">
+        <mat-icon >
+          images
+        </mat-icon>
+      </button> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-icon-button color="primary" (click)="editProfileDetails(element.pId)">
+          <mat-icon>
+          edit
+          </mat-icon>
+        </button> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-icon-button color="warn" (click)="deleteProfile(element.pId)">
+          <mat-icon>
+           delete
+          </mat-icon>
+        </button></td>
+    </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  
+

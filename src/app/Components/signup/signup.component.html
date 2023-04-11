@@ -1,0 +1,71 @@
+<div class="bootstrap-wrapper" style="margin-top:80px; ">
+     <div class="container" style="background-image:url(data:image/jpeg;base64,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) ;">
+
+        <div class="row" style="margin-top:20px;">
+            <div class="col-md-6 offset-md-3">
+              <div class="container text-center" >
+                <!-- <img src="../../../assets/register.png" alt="" width="100px" height="120px"> -->
+              </div>
+                <h1 class="text-center">Register Here!!</h1>
+                
+         <form (ngSubmit)="formSubmit()" #signupForm="ngForm"
+         >
+
+              <mat-form-field class="full-width" appearance="outline"
+              style="font-size: small;">
+                <mat-label>UserName</mat-label>
+                <input required type="text"  [(ngModel)]="user.userName"name="userName" id="userName"
+                matInput placeholder="Enter your Username"
+                pattern="[a-zA-Z0-9_]{3,20}">
+                <!-- <mat-hint>Valid Username</mat-hint> -->
+              </mat-form-field>
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>UserFirstName</mat-label>
+                <input required
+                type="text" [(ngModel)]="user.userFirstName" name = "userFirstName" id="userFirstName"
+                matInput placeholder="Enter your firstname"
+                pattern="[a-zA-Z]{2,20}">
+                <!-- <mat-hint>Valid Username</mat-hint> -->
+              </mat-form-field>
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>UserLastName</mat-label>
+                <input required
+                type="text"  [(ngModel)]="user.userLastName" name="userLastName" id="userLastName"
+                 matInput placeholder="Enter your lastname"
+                 pattern="[a-zA-Z]{2,20}">
+                <!-- <mat-hint>Valid Username</mat-hint> -->
+              </mat-form-field>
+ 
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input required
+                type="number"  [(ngModel)]="user.mobileNumber" name="mobileNumber" id="mobileNumber" 
+                matInput placeholder="Enter your mobile number"
+                pattern="[0-9]{10}">
+                <!-- <mat-hint>Valid Username</mat-hint> -->
+            </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input required
+                    matInput [type]="hide ? 'password' : 'text'"  
+                    [(ngModel)]="user.userPassword" name="userPassword" id="userPassword"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+          <div class="container text-center">
+            <button style="font: size 48px;" mat-raised-button color="primary">Register</button>
+          </div>
+          <br>
+           <div class="container text-center">
+            <a href="/login" style="color:brown">Already Registered? Click to login </a>
+           </div>
+         </form>
+        </div>
+     </div>
+
+
+</div>

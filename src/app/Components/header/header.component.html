@@ -1,0 +1,35 @@
+<mat-toolbar  class="navigationbar">
+  <span>
+    <h1 style="color:rgb(235, 205, 205) ;">MATRIMONY SITE</h1> 
+  </span>
+  <span class="space-buttons"></span>
+  <button mat-raised-button *ngIf="!isLoggedIn()" routerLink="/home">Home</button>
+  &nbsp;
+  <button routerLink="/aboutUs" mat-raised-button >AboutUs</button>
+  &nbsp;&nbsp;
+  <button routerLink="/contactUs" mat-raised-button >ContactUs</button>
+  &nbsp;&nbsp;
+  <button *ngIf="!isLoggedIn()" routerLink="/login" mat-raised-button color="primary"
+  class="navbar mat-pink">
+    
+    Login</button>
+  <button *ngIf="isLoggedIn()" (click)="logout()" routerLink="/login" mat-raised-button color="warn"
+  class="navbar">Logout</button>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()" class="insidelogin">
+  
+<button mat-raised-button  routerLink="/home">Home</button>
+&nbsp;
+<button mat-raised-button  routerLink="/addNewProfile"
+*ngIf="isAdmin()" class="add">Add New Profile</button>
+&nbsp;
+<button mat-raised-button  routerLink="/addNewProfile"
+*ngIf="isUser()">Add User Profile</button>
+&nbsp;
+<button mat-raised-button  routerLink="/showProfileDetails"
+*ngIf="isAdmin()">View Profiles</button>
+&nbsp;
+<button mat-raised-button  routerLink="/viewProfiles"
+*ngIf="isUser()">Profiles</button>
+</mat-toolbar>
